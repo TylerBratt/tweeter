@@ -1,0 +1,43 @@
+
+.tweetForm {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  text-align: left;
+}
+
+form {
+  width: 80vw;
+}
+
+form button {
+  background-color: #4056A1;
+  font-family: 'Bungee', sans-serif;
+  color: white;
+  border: none;
+}
+
+.counter {
+  font-family: 'Bungee', sans-serif;
+}
+
+textarea {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid black;
+  height: 30px;
+  background-color: #f4f1ec;
+  resize: none;
+  display: block;
+  width: 100%;
+}
+
+.numberSubmit {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-right: 10px;
+}

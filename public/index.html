@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css">
     <link rel="stylesheet" href="/styles/header.css">
+    <link rel="stylesheet" href="/styles/newTweet.css">
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -46,16 +47,16 @@
     
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi porro eum error perferendis officiis asperiores quos nisi consectetur, reprehenderit aperiam iusto nobis sed fuga vero suscipit laborum eos hic doloremque?
-      Minima dolore quod beatae saepe nobis non illo est, odio obcaecati porro illum asperiores necessitatibus, minus maiores repellendus nesciunt deleniti autem voluptas, maxime consectetur. Velit error doloremque distinctio reprehenderit quisquam.
-      Quo asperiores veniam nostrum voluptatum, tenetur optio sunt error? Accusamus aperiam, magnam, eligendi sunt architecto, perferendis nam optio aliquid minus quidem pariatur ea quasi molestiae iure animi. Magni, sunt fugit.
-      Doloribus dolore rem impedit sequi nostrum assumenda neque maxime magnam at adipisci, fuga possimus quae rerum provident voluptatibus atque, corporis quia nam earum omnis commodi laudantium laborum. Nobis, repellendus repellat.
-      Officia tempore architecto veritatis facilis fuga? Quas voluptatem voluptatum in, repudiandae impedit voluptates beatae itaque modi sequi mollitia ex earum alias, ab qui eaque! Impedit temporibus eligendi numquam dolore minima.
-      Facere vitae autem mollitia accusamus laborum recusandae impedit natus ducimus quas eveniet excepturi tempora unde consequatur nobis molestias blanditiis eligendi, temporibus cumque assumenda! Harum maiores culpa eum, sequi unde sunt!
-      Excepturi molestias recusandae incidunt nam voluptates assumenda dignissimos rerum et enim placeat iusto quos mollitia ullam in officiis eos hic animi, quidem quod harum sapiente sunt. Sint voluptatem deleniti harum.
-      Nisi ipsum incidunt molestias deserunt necessitatibus soluta cupiditate nulla consectetur delectus ea tempore cum, laudantium explicabo! Molestiae veritatis vero deleniti magnam! Repellat maiores nihil quidem officia debitis amet, qui enim?
-      Aperiam reprehenderit optio sunt eligendi dolorum libero hic laboriosam ex, sequi nisi repellendus labore. Ducimus ad laborum minima autem tempora quo eum, voluptatum porro inventore reiciendis obcaecati corporis iusto optio.
-      Facilis deleniti at quia porro neque temporibus illum consectetur. Quasi fugiat corporis ipsam itaque. Deleniti obcaecati laborum sint assumenda ratione sequi eius delectus totam in aspernatur, dolorem expedita, velit earum.</p>
+      <section class="newTweet">
+        <form class='tweetForm' action="POST" method="/tweets/">
+          <label for="tweetText">What are you humming about?</label>
+          <textarea name="text" id="tweetText" placeholder=""></textarea>
+          <div class="numberSubmit">
+            <button type='submit'>Tweet</button>
+            <output name="counter" class="counter" for="tweetText">140</output>
+          </div>
+        </form>
+      </section>
     </main>
   </body>
 </html>
