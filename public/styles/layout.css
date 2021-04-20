@@ -63,7 +63,9 @@ article .artHeader {
 }
 
 .tweeted {
+  margin: 0 20px;
   padding: 30px 0 10px;
+  text-align: left;
 }
 
 article .artFooter {
