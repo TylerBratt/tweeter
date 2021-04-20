@@ -1,4 +1,3 @@
-
 .tweetForm {
   display: flex;
   flex-direction: column;
@@ -13,14 +12,14 @@ form {
 }
 
 form button {
-  background-color: #4056A1;
-  font-family: 'Bungee', sans-serif;
+  background-color: #4056a1;
+  font-family: "Bungee", sans-serif;
   color: white;
   border: none;
 }
 
 .counter {
-  font-family: 'Bungee', sans-serif;
+  font-family: "Bungee", sans-serif;
 }
 
 textarea {
@@ -40,4 +39,8 @@ textarea {
   justify-content: space-between;
   padding-top: 15px;
   padding-right: 10px;
+}
+
+.overCount {
+  color: darkred;
 }
