@@ -1,4 +1,4 @@
-.header {
+.profile {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,9 +7,4 @@
   height: 100vh;
   background-color: bisque;
   background-image: url(http://www.transparenttextures.com/patterns/leather.png);
-}
-
-header {
-  align-items: center;
-  position: absolute;
 }

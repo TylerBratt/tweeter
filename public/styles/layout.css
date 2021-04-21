@@ -45,7 +45,7 @@ main {
   box-shadow: 10px 10px 10px darkgrey;
 }
 
-article .artHeader {
+article header {
   display: flex;
   justify-content: space-between;
   padding: 20px 30px;
@@ -68,11 +68,11 @@ article .artHeader {
   text-align: left;
 }
 
-article .artFooter {
-  border-top: 3px solid black;
-  margin: 10px;
+article > footer {
   display: flex;
   justify-content: space-between;
+  border-top: 3px solid black;
+  margin: 10px;
   padding: 0 30px;
 }
 
