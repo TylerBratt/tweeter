@@ -45,17 +45,40 @@ $(document).ready(function () {
     $.ajax({
       url: "/tweets",
       dataType: "JSON",
-      type: "GET",
+      method: "GET",
       success: (database) => {
         renderTweets(database);
       },
     });
   };
 
-  $("#textForm").on("submit", function (evt) {
-    evt.preventDefault();
+  $("#tweetForm").on("submit", function (evt) {
+    numOfChars = $(this).find("textarea").val().length;
+    if (numOfChars === 0) {
+      $("#error").text("Cannot make an empty tweet");
+      evt.preventDefault();
+    } else if (numOfChars > 140) {
+      $("#error").text("Yap Yap Yap... less characters please!");
+      evt.preventDefault();
+    } else {
+      evt.preventDefault();
+      $.ajax({
+        url: "/tweets",
+        method: "POST",
+        data: $(this).find("textarea").serialize(),
+        success: () => {
+          loadTweets();
+        },
+        error: () => {
+          $("#error").text("There was a problem with the ajax request");
+          evt.preventDefault();
+        },
+      });
+      $("#tweetText").val("");
+      $(".counter").text(140);
+    }
   });
-  $.post("/new", $("#tweetForm").serialize());
+
   //aks about the correct route
 
   loadTweets();

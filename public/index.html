@@ -53,9 +53,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="newTweet">
+        <h2 id="error"></h2>
         <form id="tweetForm" class="tweetForm" action="POST" method="/tweets">
-          <label for="tweetText">What are you humming about?</label>
-          <textarea name="text" id="tweetText" placeholder=""></textarea>
+          <label for="tweetText"></label>
+          <textarea name="text" id="tweetText" placeholder="What are you humming about?"></textarea>
           <div class="numberSubmit">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweetText">140</output>
