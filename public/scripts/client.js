@@ -13,7 +13,6 @@ const escape = function (str) {
 $(document).ready(function () {
   //Loops through tweets, calls createTweetElement for each tweet, takes return value and appends it to the tweets container.
   const renderTweets = function (tweets) {
-    // console.log(tweets);
     for (const tweet of tweets) {
       $(".singleTweet").prepend(createTweetElement(tweet));
     }
@@ -21,6 +20,9 @@ $(document).ready(function () {
 
   //These are the properties that will be rendered to the page
   const createTweetElement = function (tweet) {
+    const today = new Date();
+    const tweetDate = new Date(tweet.created_at);
+    const time = Math.floor((today - tweetDate) / (1000 * 60 * 60 * 24));
     const htmlElem = `
     <article class='tweetContainer'>
       <header>
@@ -32,7 +34,7 @@ $(document).ready(function () {
       </header>
       <p class="tweeted">${escape(tweet.content.text)}</p>
       <footer>
-        <span class="timeSince">${tweet.created_at}</span>
+        <span class="timeSince">${time} days ago</span>
         <div>
           <span class="flag"><i class="fas fa-flag"></i></span>
           <span class="retweet"><i class="fas fa-retweet"></i></span>
@@ -45,6 +47,7 @@ $(document).ready(function () {
     return htmlElem;
   };
 
+  // This will load tweets from the database and return errors when needed
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
@@ -95,12 +98,10 @@ $(document).ready(function () {
 
   $("#writeTweet").on("click", () => {
     if ($(".newTweet:hidden").length) {
-      console.log(".newTweet".length);
       $(".newTweet").slideDown();
       $(".newTweet").find("textarea").focus();
     } else $(".newTweet").slideUp();
   });
 
   loadTweets();
-  $(".timeSince").text(timeago.format(new Date()));
 });

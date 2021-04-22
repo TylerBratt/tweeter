@@ -1,3 +1,5 @@
+/* Styles for the new tweet area */
+
 .newTweet {
   margin: 30px 0;
   width: 100%;
@@ -11,6 +13,9 @@ form button {
   color: white;
   border: none;
 }
+form button:active {
+  box-shadow: 5px 5px 5px darkgrey;
+}
 
 .counter {
   font-family: "Bungee", sans-serif;
@@ -21,7 +26,6 @@ textarea {
   border-left: none;
   border-right: none;
   border-bottom: 3px solid black;
-  height: 30px;
   background-color: #f4f1ec;
   resize: none;
   display: block;
