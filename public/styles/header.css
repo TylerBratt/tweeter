@@ -3,8 +3,28 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: 100vh;
-  background-color: bisque;
+  height: 500px;
+  background-color: #f5a74b;
   background-image: url(http://www.transparenttextures.com/patterns/leather.png);
+}
+
+header img {
+  padding-top: 100px;
+}
+
+@media only screen and (min-width: 768px) {
+  .headerContainer {
+    width: 450px;
+  }
+  .profile {
+    max-width: 400px;
+    height: 400px;
+    position: fixed;
+    top: 200px;
+    left: 30px;
+  }
+
+  header img {
+    padding-top: 40px;
+  }
 }

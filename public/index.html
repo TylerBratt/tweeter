@@ -40,22 +40,23 @@
         <i class="fas fa-angle-double-down"></i>
       </div>
     </nav>
-    <header class="profile">
-      <div>
-        <img src="/images/profile-hex.png" alt="profile image" />
-      </div>
-      <br />
-      <div>
-        <h2>Tyler Bratt</h2>
-      </div>
-    </header>
+    <div class="headerContainer">
+      <header class="profile">
+        <div>
+          <img src="/images/profile-hex.png" alt="profile image" />
+        </div>
+        <br />
+        <div>
+          <h2>Tyler Bratt</h2>
+        </div>
+      </header>
+    </div>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="newTweet">
         <div id="error"></div>
         <form id="tweetForm" class="tweetForm" action="POST" method="/tweets">
-          <label for="tweetText"></label>
           <textarea name="text" id="tweetText" placeholder="What are you humming about?"></textarea>
           <div class="numberSubmit">
             <button type="submit">Tweet</button>
@@ -63,7 +64,6 @@
           </div>
         </form>
       </section>
-
       <section class="singleTweet"></section>
     </main>
   </body>
