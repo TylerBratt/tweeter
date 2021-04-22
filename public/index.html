@@ -35,10 +35,10 @@
     <!-- Top nav bar (fixed) -->
     <nav>
       <span>tweeter</span>
-      <a
+      <div id="writeTweet"
         >Write a new tweet
         <i class="fas fa-angle-double-down"></i>
-      </a>
+      </div>
     </nav>
     <header class="profile">
       <div>
@@ -53,7 +53,7 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="newTweet">
-        <h2 id="error"></h2>
+        <div id="error"></div>
         <form id="tweetForm" class="tweetForm" action="POST" method="/tweets">
           <label for="tweetText"></label>
           <textarea name="text" id="tweetText" placeholder="What are you humming about?"></textarea>

@@ -81,3 +81,9 @@ article > footer {
 .heart:hover {
   color: sandybrown;
 }
+
+#error {
+  font-size: 20px;
+  color: darkred;
+  border: 3px solid darkred;
+}

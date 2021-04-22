@@ -5,7 +5,11 @@
  */
 //pass the tweet date instead of 'new DATE'
 //Creates the time element of the tweet
-
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 $(document).ready(function () {
   //Loops through tweets, calls createTweetElement for each tweet, takes return value and appends it to the tweets container.
   const renderTweets = function (tweets) {
@@ -26,7 +30,7 @@ $(document).ready(function () {
         </div>
         <span class="handle">${tweet.user.handle}</span>
       </header>
-      <p class="tweeted">${tweet.content.text}</p>
+      <p class="tweeted">${escape(tweet.content.text)}</p>
       <footer>
         <span class="timeSince">${tweet.created_at}</span>
         <div>
@@ -49,16 +53,25 @@ $(document).ready(function () {
       success: (database) => {
         renderTweets(database);
       },
+      error: () => {
+        $("#error").text("There was a problem with the ajax request");
+        $("#error").slideDown();
+        evt.preventDefault();
+      },
     });
   };
+  $("#error").hide();
 
   $("#tweetForm").on("submit", function (evt) {
+    $("#error").slideUp();
     numOfChars = $(this).find("textarea").val().length;
     if (numOfChars === 0) {
       $("#error").text("Cannot make an empty tweet");
+      $("#error").slideDown();
       evt.preventDefault();
     } else if (numOfChars > 140) {
       $("#error").text("Yap Yap Yap... less characters please!");
+      $("#error").slideDown();
       evt.preventDefault();
     } else {
       evt.preventDefault();
@@ -71,6 +84,7 @@ $(document).ready(function () {
         },
         error: () => {
           $("#error").text("There was a problem with the ajax request");
+          $("#error").slideDown();
           evt.preventDefault();
         },
       });
@@ -79,7 +93,13 @@ $(document).ready(function () {
     }
   });
 
-  //aks about the correct route
+  $("#writeTweet").on("click", () => {
+    if ($(".newTweet:hidden").length) {
+      console.log(".newTweet".length);
+      $(".newTweet").slideDown();
+      $(".newTweet").find("textarea").focus();
+    } else $(".newTweet").slideUp();
+  });
 
   loadTweets();
   $(".timeSince").text(timeago.format(new Date()));

@@ -15,7 +15,7 @@ nav span {
   padding: 1.5em;
 }
 
-nav a {
+nav #writeTweet {
   padding: 1.5em;
   display: flex;
   flex-direction: column;
