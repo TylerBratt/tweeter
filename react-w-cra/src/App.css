@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+  background-color: lightgrey;
+}
+
+
+#superButton {
+  border:5px solid blue;
+}

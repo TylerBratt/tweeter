@@ -1,0 +1,52 @@
+/* Styles for the new tweet area */
+
+.newTweet {
+  margin: 30px 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+form button {
+  background-color: #4056a1;
+  font-family: "Bungee", sans-serif;
+  color: white;
+  border: none;
+}
+form button:active {
+  box-shadow: 5px 5px 5px darkgrey;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+}
+
+textarea {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 3px solid black;
+  background-color: #f4f1ec;
+  resize: none;
+  display: block;
+  width: 100%;
+}
+
+.numberSubmit {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-right: 10px;
+}
+
+.overCount {
+  color: darkred;
+}
+
+@media only screen and (min-width: 768px) {
+  form {
+    width: 85%;
+    max-width: 650px;
+    align-self: center;
+  }
+}

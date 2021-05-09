@@ -1,0 +1,43 @@
+/* Styles for the Nav bar */
+
+nav {
+  height: 120px;
+  width: 100vw;
+  color: #4056a1;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 1;
+  font-size: 28px;
+}
+
+nav span {
+  font-family: "Bungee", sans-serif;
+  padding: 1.5em;
+  text-shadow: 2px 5px 2px darkgrey;
+}
+
+nav #writeTweet {
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-shadow: 1px 1px 1px black;
+}
+
+nav i {
+  color: red;
+  text-shadow: 2px 4px 2px darkgrey;
+}
+
+@media only screen and (min-width: 768px) {
+  nav {
+    background-color: #4056a1;
+    color: #ffffff;
+    font-size: 24px;
+  }
+  nav i,
+  nav span {
+    text-shadow: 2px 4px 2px black;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta Information -->
+    <title>Tweeter - Home Page</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- App CSS -->
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/newTweet.css" />
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+      integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript" src="/scripts/client.js"></script>
+    <script type="text/javascript" src="/scripts/composerCharCounter.js"></script>  -->
+
+    <!-- App JS -->
+  </head>
+
+  <body>
+    <!-- Top nav bar (fixed) -->
+    <nav>
+      <span>tweeter</span>
+      <div id="writeTweet"
+        >Write a new tweet
+        <i class="fas fa-angle-double-down"></i>
+      </div>
+    </nav>
+    <div class="headerContainer">
+      <header class="profile">
+        <div>
+          <img src="/images/profile-hex.png" alt="profile image" />
+        </div>
+        <br />
+        <div>
+          <h2>Tyler Bratt</h2>
+        </div>
+      </header>
+    </div>
+
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <section class="newTweet">
+        <div id="error"></div>
+        <form id="tweetForm" class="tweetForm" action="POST" method="/tweets">
+          <textarea name="text" id="tweetText" placeholder="What are you humming about?"></textarea>
+          <div class="numberSubmit">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweetText">140</output>
+          </div>
+        </form>
+      </section>
+      <section class="singleTweet">
+        <article class="tweetContainer">
+          <header>
+            <div>
+              <img src="https://i.imgur.com/nlhLi3I.png">
+              <span class="name">Thrillhouse</span>
+            </div>
+            <span class="handle">@FalloutBoy</span>
+          </header>
+          <p class="tweeted">Watch Out, Radioactive Man!</p>
+          <footer>
+            <span class="timeSince">1 days ago</span>
+            <div>
+              <span class="flag"><i class="fas fa-flag"></i></span>
+              <span class="retweet"><i class="fas fa-retweet"></i></span>
+              <span class="heart"><i class="fas fa-heart"></i></span>
+            </div>
+          </footer>
+        </article>
+        <article class="tweetContainer">
+          <header>
+            <div>
+              <img src="https://i.imgur.com/nlhLi3I.png">
+              <span class="name">Jebediah Springfield</span>
+            </div>
+            <span class="handle">@JS</span>
+          </header>
+          <p class="tweeted">Hello</p>
+          <footer>
+            <span class="timeSince">1 days ago</span>
+            <div>
+              <span class="flag"><i class="fas fa-flag"></i></span>
+              <span class="retweet"><i class="fas fa-retweet"></i></span>
+              <span class="heart"><i class="fas fa-heart"></i></span>
+            </div>
+          </footer>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
