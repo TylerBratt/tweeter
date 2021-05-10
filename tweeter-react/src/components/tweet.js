@@ -5,6 +5,9 @@ export const Tweet = (props) => {
 
   const {name, handle, profile_image, text, date} = props
   return(
+      <>
+      {name && handle && profile_image && text && date && 
+          (
     <article className="tweetContainer">
           <header>
             <div>
@@ -22,6 +25,9 @@ export const Tweet = (props) => {
               <span className="heart"><i className="fas fa-heart"></i></span>
             </div>
           </footer>
-        </article>
-  )
+          </article>
+          )
+        }
+          </>
+          )
 }
